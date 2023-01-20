@@ -28,7 +28,7 @@ public class AdminsController {
     @Autowired
     private AdminsRepository adminsRepository;
 
-    @PostMapping("/login")
+    @PostMapping("/authentification")
     public @ResponseBody Map<String, Object> login(@RequestBody Admins admins) throws Exception {
         Admins a = adminsRepository.login(admins.getEmail(), admins.getMotDePasse());
         if( a == null ){
